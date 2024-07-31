@@ -1,0 +1,21 @@
+<!-- default.html -->
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    {% include head.html %}
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <div class="overlay">
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+        </div>
+    </div>
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+</body>
+</html>
