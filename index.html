@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jekyll Blog</title>
+  <!-- CSS 연결 -->
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+</head>
+<body>
+  <div class="container">
+    <!-- Background image -->
+    <div class="background"></div>
+    
+    <!-- Overlay with boxes -->
+    <div class="overlay">
+      <!-- Box 1: Header with search, tags, and categories -->
+      <div id="box1" class="box">
+        <div class="box-content">
+          <h1>Search</h1>
+          <form action="#" method="get">
+            <input type="text" name="search" placeholder="Search...">
+            <button type="submit">Search</button>
+          </form>    
+          
+          <h2>Categories</h2>
+          <ul class="categories">
+            {% for category in site.categories %}
+              <li><a href="{{ site.baseurl }}/category/{{ category[0] }}">{{ category[0] }}</a></li>
+            {% endfor %}
+          </ul>
+
+          <h2>Tags</h2>
+          <ul class="tags">
+            {% for tag in site.tags %}
+              <li><a href="{{ site.baseurl }}/tag/{{ tag[0] }}">{{ tag[0] }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Box 2: Sidebar with detailed category content -->
+      <div id="box2" class="box">
+        <div class="box-content">
+          <h2>Category Details</h2>
+          <p>Detailed content about the category goes here.</p>
+        </div>
+      </div>
+      
+      <!-- Box 3: Main content with post titles -->
+      <div id="box3" class="box">
+        <div class="box-content">
+          <h2>Recent Posts</h2>
+          <!-- Loop through posts -->
+          {% for post in site.posts limit:5 %}
+            <div class="post-preview">
+              <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

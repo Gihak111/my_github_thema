@@ -6,4 +6,7 @@ $ git checkout --orphan gh-pages
 $ git rm -rf .
 bundle install
 bundle exec jekyll server
-http://http://127.0.0.1:4000/
+http://127.0.0.1:4000/
+
+사진 만들기
+https://www.bing.com/images/create?FORM=GDPGLP

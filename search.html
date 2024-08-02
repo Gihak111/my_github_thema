@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <div class="overlay">
+            <h2>Search Results for "{{ site.search.query }}"</h2>
+            <ul>
+                {% assign results = site.pages | where: "content", site.search.query %}
+                {% for result in results %}
+                    <li><a href="{{ result.url }}">{{ result.title }}</a></li>
+                {% endfor %}
+                {% if results.size == 0 %}
+                    <p>No results found.</p>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

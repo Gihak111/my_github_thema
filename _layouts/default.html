@@ -1,21 +1,28 @@
-<!-- default.html -->
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: site.title }}</title>
-    {% include head.html %}
+    <title>{{ page.title }} | My Blog</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="background"></div>
-        <div class="overlay">
-            <div class="box" id="box1"></div>
-            <div class="box" id="box2"></div>
-            <div class="box" id="box3"></div>
-        </div>
-    </div>
-    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+    <!--
+    <header>
+        <h1>{{ site.title }}</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/search.html">Search</a>
+            <a href="/categories.html">Categories</a>
+            <a href="/tags.html">Tags</a>
+        </nav>
+    </header>
+    -->
+    <main>
+        {{ content }}
+    </main>
+    <footer>
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </footer>
 </body>
 </html>
