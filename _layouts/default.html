@@ -1,19 +1,22 @@
----
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include header.html %}
+    <!-- 헤더 파일을 포함하여 메타데이터와 스타일시트 링크를 설정 -->
+     {% include header.html %}
 </head>
 <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Gihak111 </div>
 <div id="wrapper">
+    <!-- 네비게이션 파일을 포함하여 메뉴를 설정 -->
     {% include navigation.html %}
     <div class="container">
+        <!-- 각 페이지의 콘텐츠가 이 위치에 삽입됨 -->
         {{ content }}
     </div>
+    <!-- 푸터 파일을 포함하여 페이지 하단에 표시할 내용 설정 -->
     {% include footer.html %}
 </div>
+<!-- 스크립트 파일을 포함하여 추가 JavaScript를 설정 -->
 {% include scripts.html %}
 </body>
 </html>

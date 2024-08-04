@@ -37,3 +37,6 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 source "https://rubygems.org"
 gem "jekyll", "~> 3.9.5"
 gem "webrick", "~> 1.7" # Add this line
+
+gem 'csv'
+gem 'jekyll-search'
