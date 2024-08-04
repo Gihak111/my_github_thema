@@ -1,121 +1,16 @@
-:root {
-    /* 박스 크기 기본 설정 */
-    --box1-width: 900px; /* 고정 너비 */
-    --box1-height: 100px; /* 고정 높이 */
-
-    --box3-width: 750px; /* 고정 너비 */
-    --box3-height: 500px; /* 고정 높이 */
-    --box3-max-width: 1200px; /* 최대 너비 설정 */
-    --box3-max-height: 600px; /* 최대 높이 설정 */
+#search-container {
+    margin: 20px 0;
 }
-
-/* 전체 문서 및 HTML 설정 */
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* 스크롤 바 숨기기 */
-    height: 100%; /* 전체 높이 설정 */
-    width: 100%; /* 전체 너비 설정 */
-}
-
-/* 전체 컨테이너 설정 */
-.container {
-    position: relative; /* 절대 위치 지정의 기준 */
-    height: 100vh; /* 화면 전체 높이 설정 */
-    width: 100vw; /* 화면 전체 너비 설정 */
-    display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-}
-
-/* 배경 설정 */
-.background {
-    position: absolute; /* 배경을 절대 위치로 설정 */
-    top: 0;
-    left: 0;
+#search-input {
     width: 100%;
-    height: 100%;
-    object-fit: fill;
-    background: url('/assets/images/background.jfif') no-repeat center center; /* 배경 이미지 설정 */
-    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 조절 */
-    opacity: 0;
-    animation: fadeInBackground 1s forwards; /* 배경 애니메이션 설정 */
+    padding: 10px;
+    font-size: 16px;
 }
-
-/* 박스 공통 스타일 */
-.box {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 설정 */
-    padding: 20px; /* 안쪽 여백 설정 */
-    overflow: hidden; /* 내용이 박스를 넘지 않도록 설정 */
-    opacity: 0;
-    animation: fadeInBoxes 1s forwards; /* 박스 애니메이션 설정 */
-    background-size: cover; /* 배경 이미지 크기 조절 */
-    background-position: center; /* 배경 이미지 위치 조절 */
-    position: absolute; /* 박스를 절대 위치로 설정 */
-    display: flex; /* 내용 정렬을 위해 flex 사용 */
-    align-items: center; /* 내용 세로 중앙 정렬 */
-    justify-content: center; /* 내용 가로 중앙 정렬 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+#results-container {
+    list-style: none;
+    padding: 0;
 }
-
-/* 박스 1 스타일 - 가로 길쭉한 상자 */
-#box1 {
-    background: url('/assets/images/box3.png') no-repeat center center; /* 배경 이미지 설정 */
-    width: var(--box1-width); /* 고정 너비 설정 */
-    height: var(--box1-height); /* 고정 높이 설정 */
-    top: 10%; /* 상단 위치 설정 */
-    left: 50%; /* 좌측 위치 설정 */
-    transform: translateX(-50%); /* 중앙 정렬을 위한 변환 */
-    z-index: 1; /* z-index 설정 */
-}
-
-/* 박스 3 스타일 - 가운데 큰 직사각형 상자 */
-#box3 {
-    background: url('/assets/images/box1.png') no-repeat center center; /* 배경 이미지 설정 */
-    width: var(--box3-width); /* 고정 너비 설정 */
-    height: var(--box3-height); /* 고정 높이 설정 */
-    max-width: var(--box3-max-width); /* 최대 너비 설정 */
-    max-height: var(--box3-max-height); /* 최대 높이 설정 */
-    top: 50%; /* 상단 위치 설정 */
-    left: 50%; /* 좌측 위치 설정 */
-    transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
-    z-index: 2; /* z-index 설정 */
-}
-
-/* 박스 내부 이미지 스타일 */
-.box img {
-    width: 100%; /* 이미지 너비 100% */
-    height: 100%; /* 이미지 높이 100% */
-    object-fit: cover; /* 이미지 비율 유지하며 컨테이너에 맞게 조정 */
-}
-
-/* 박스 3 내부 콘텐츠 스타일 */
-#box3 .post-preview {
-    margin-bottom: 10px; /* 포스트 프리뷰 간격 설정 */
-}
-
-#box3 .post-preview h3 {
-    margin: 0; /* 제목의 마진 제거 */
-}
-
-#box3 .post-preview a {
-    color: white; /* 링크 색상 흰색 */
-    text-decoration: none; /* 링크 장식 없음 */
-}
-
-#box3 .post-preview a:hover {
-    text-decoration: underline; /* 링크에 호버 시 밑줄 추가 */
-}
-
-/* 애니메이션 설정 */
-@keyframes fadeInBoxes {
-    to {
-        opacity: 1; /* 애니메이션 완료 시 불투명도 1 */
-    }
-}
-
-@keyframes fadeInBackground {
-    to {
-        opacity: 1; /* 애니메이션 완료 시 불투명도 1 */
-    }
+#results-container li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
