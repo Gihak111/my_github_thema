@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Gihak111 </div>
 <head>
     <!-- 헤더 파일을 포함하여 메타데이터와 스타일시트 링크를 설정 -->
     {% include header.html %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css"> <!-- 새 CSS 파일 추가 -->
     <style>
-
-        /* 코드 블록 스타일 */
+        /* 기존 스타일 */
         pre {
-            background-color: #f5f5f5; /* 코드 블록 배경색 */
-            border: 1px solid #ddd; /* 코드 블록 경계선 */
-            border-radius: 4px; /* 코드 블록 경계선 둥글게 */
-            padding: 10px; /* 코드 블록 안쪽 여백 */
-            overflow-x: auto; /* 가로 스크롤 */
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            overflow-x: auto;
         }
 
         code {
-            font-family: monospace; /* 고정 폭 글꼴 */
-            color: #d6336c; /* 코드 글자 색상 */
+            font-family: monospace;
+            color: #d6336c;
         }
+        
+        
+        /*
+         이미지 스타일 
+        .container img {
+            max-width: 100%;  컨테이너 너비에 맞게 이미지 크기 조정 
+            height: auto; /* 비율 유지 
+            display: block; /* 이미지 주위의 여백 제거 
+            margin: 0 auto; /* 중앙 정렬 
+        }
+        */
+
+
     </style>
 </head>
 <body>
+<i class="fa fa-bars fa-2x"></i> Gihak111
 <!-- 네비게이션 파일을 포함하여 메뉴를 설정 -->
 {% include navigation.html %}
 
@@ -31,7 +45,8 @@
         {{ content }}
     </div>
 </div>
-
+<!-- 여백 역할을 하는 HTML 파일 포함 -->
+{% include spacer.html %}
 <!-- 푸터 파일을 포함하여 페이지 하단에 표시할 내용 설정 -->
 {% include footer.html %}
 
