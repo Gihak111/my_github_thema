@@ -1,1 +1,2 @@
-this is minimal thema barebone yeah
+현재 깃 페이지의 전 버전 테마 입니다
+다운 받아서 편하게 사용할 수 있습니다
